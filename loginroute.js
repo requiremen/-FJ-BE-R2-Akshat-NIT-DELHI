@@ -1,6 +1,6 @@
 //login route
 const JWT_SECRET = "MY_SECRET_KEY";
-app.post("/login",async function(req,res){
+app.post("/login",loginmiddleware,async function(req,res){
     const { Useremail, Password } = req.body;
 try{
     const user = await Register.findOne({
