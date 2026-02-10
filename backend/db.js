@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://231220006_db_user:0wwdedIYobR3LHeq@cluster0.t0f6t7g.mongodb.net/personaltracker")
+const mongoUrl = process.env.MONGO_URL || "mongodb+srv://231220006_db_user:0wwdedIYobR3LHeq@cluster0.t0f6t7g.mongodb.net/personaltracker";
+
+mongoose.connect(mongoUrl)
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.error("MongoDB connection error:", err));
 const registerSchema = new mongoose.Schema({
